@@ -1,0 +1,13 @@
+services:
+  valor-neto:
+    build: .
+    container_name: valor-neto
+    ports:
+      - "8080:8080"
+    environment:
+      # Se pueden cambiar las reglas sin tocar el codigo
+      REGLAS_SUELDO_MINIMO_DESCUENTO: "2000"
+      REGLAS_PORCENTAJE_DESCUENTO: "8"
+      REGLAS_HORAS_LIMITE: "8"
+      REGLAS_BONIFICACION_HORAS_EXTRAS: "300"
+    restart: unless-stopped
